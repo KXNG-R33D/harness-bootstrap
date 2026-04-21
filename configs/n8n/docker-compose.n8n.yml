@@ -1,0 +1,24 @@
+# n8n standalone compose — managed by n8n-harness.service
+# Data persisted to N8N_DATA_DIR (set in bootstrap .env)
+services:
+  n8n:
+    image: n8nio/n8n:latest
+    container_name: n8n
+    restart: unless-stopped
+    ports:
+      - "${N8N_PORT:-5678}:5678"
+    environment:
+      - N8N_HOST=0.0.0.0
+      - N8N_PORT=${N8N_PORT:-5678}
+      - N8N_PROTOCOL=http
+      - NODE_ENV=production
+      - GENERIC_TIMEZONE=America/New_York
+      - N8N_RUNNERS_ENABLED=true
+      - OLLAMA_BASE_URL=http://172.17.0.1:11434
+    volumes:
+      - ${N8N_DATA_DIR:-/home/ryan/.local/share/n8n}:/home/node/.n8n
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+networks:
+  default:
+    name: n8n-net
