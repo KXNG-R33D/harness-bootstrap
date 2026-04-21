@@ -1,0 +1,10 @@
+# Never commit the live .env — it contains TAILSCALE_AUTH_KEY
+.env
+
+# Logs
+*.log
+
+# Python
+__pycache__/
+*.pyc
+.venv/

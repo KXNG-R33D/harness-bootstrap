@@ -1,0 +1,13 @@
+# harness-dirs.txt — read by 09-directory-skeleton.sh
+# Variables expanded: $HARNESS_DIR, $HOME
+# All dirs created with chown HOST_USER:HOST_USER (UID 1000)
+
+$HARNESS_DIR/openclaw-executor/workspace
+$HARNESS_DIR/openclaw-executor/evidence_drop
+$HARNESS_DIR/knowledge-base/live-wiki
+$HARNESS_DIR/knowledge-base/raw-inbox
+$HARNESS_DIR/knowledge-base/autoresearch
+$HARNESS_DIR/skills
+$HOME/.config/hermes
+$HOME/.local/share/n8n
+$HOME/.venv
